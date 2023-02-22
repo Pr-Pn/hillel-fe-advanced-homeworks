@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function accumulate() {
+            let result = 0;
+            return function(value) {
+                return result += value;
+            }
+        }
+
+        let sum = accumulate();
+        console.log(sum(3));
+        console.log(sum(5));
+        console.log(sum(20));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
