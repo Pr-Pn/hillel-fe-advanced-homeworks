@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // GetExponential = function (num = +prompt('Введіть значення', '3')) {
+        //     this.value = num;
+        //     this.check = this.value >= 0;
+        //     this.pow = function (degree = +prompt('Введіть ступінь', '2'), num = this.value) {
+        //         if (this.check === false) return 'ERROR';
+        //         switch (degree) {
+        //             case 0:
+        //                 return 1;
+        //             case  1:
+        //                 return num;
+        //             default:
+        //                 return num * this.pow(degree - 1);
+        //         }
+        //     }
+        // }
+        // const number = new GetExponential();
+        // console.log(number.pow());
+
+        function getExponentiation(base, power) {
+            if (base < 0) return "Error";
+            if (power === 0) {
+                return 1;
+            } else if (power === 1) {
+                return base;
+            } else {
+                return base * getExponentiation(base, power - 1);
+            }
+        }
+
+        console.log(getExponentiation(-3,3)); // 27
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let images = [
+            "./image/1.jpg",
+            "./image/2.jpg",
+            "./image/3.jpg",
+            "./image/4.jpg",
+            "./image/5.jpg",
+            "./image/6.jpg",
+            "./image/7.jpg",
+            "./image/8.jpg",
+            "./image/9.jpg"
+        ]
+
+        const randomNumber = Math.floor(Math.random() * images.length);
+
+        const image = document.createElement("img");
+        image.src = images[randomNumber];
+        document.body.append(image);
+    </script>
+</body>
+</html>
