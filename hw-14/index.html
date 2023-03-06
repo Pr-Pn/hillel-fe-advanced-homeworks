@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let array = [1,2,[1.1,1.2,1.3],3];
+    document.body.append(generateList(array));
+
+    function generateList(array) {
+        const list = document.createElement("ul");
+
+        for (let i = 0; i < array.length; i++) {
+            let element = array[i];
+            if (Array.isArray(element)) {
+                list.append(generateListItem(generateList(element)));
+            } else {
+                list.append(generateListItem(element));
+            }
+        }
+        return list;
+    }
+
+    function generateListItem(element) {
+        const listItem = document.createElement("li");
+        if (isNaN(element)) {
+            listItem.append(element);
+        } else {
+            listItem.innerText = element;
+        }
+        return listItem;
+    }
+
+</script>
+
+</body>
+</html>
