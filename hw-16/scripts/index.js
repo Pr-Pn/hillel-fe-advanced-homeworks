@@ -1,15 +1,15 @@
 function Slider(_img, _sliderWrapper) {
     this.sliderWrapper = document.querySelector(_sliderWrapper);
-    this.currentImg = this.sliderWrapper.querySelector('.img');
-    this.nextSlideBtn = this.sliderWrapper.querySelector(".next-btn");
-    this.prevSlideBtn = this.sliderWrapper.querySelector(".prev-btn");
+    this.currentImg = null;
+    this.nextSlideBtn = null;
+    this.prevSlideBtn = null;
     this.slideIndex = 0;
-    this.nextSlide = (event) => {
+    this.nextSlide = () => {
         this.slideIndex++;
         this.updateImage();
         this.updateButtons();
     };
-    this.prevSlide = (event) => {
+    this.prevSlide = () => {
         this.slideIndex--;
         this.updateImage();
         this.updateButtons();
@@ -30,10 +30,30 @@ function Slider(_img, _sliderWrapper) {
         }
     }
     this.init = () => {
+        if (this.sliderWrapper == null) {
+            console.log("Wrong slider selector:", _sliderWrapper);
+            return;
+        }
+        this.initElements();
         this.updateImage();
         this.updateButtons();
-        this.nextSlideBtn.onclick = this.nextSlide;
-        this.prevSlideBtn.onclick = this.prevSlide;
+    }
+    this.initElements = () => {
+        this.sliderWrapper.insertAdjacentHTML('beforeend', this.createTemplate());
+        this.currentImg = this.sliderWrapper.querySelector('.img');
+        this.nextSlideBtn = this.sliderWrapper.querySelector(".next-btn");
+        this.prevSlideBtn = this.sliderWrapper.querySelector(".prev-btn");
+        this.nextSlideBtn.addEventListener('click', this.nextSlide);
+        this.prevSlideBtn.addEventListener('click', this.prevSlide);
+    }
+    this.createTemplate = () => {
+        return `
+            <div class="slider-list">
+                <img class="img" src="" alt="">
+            </div>
+            <button class="arrow prev-btn" type="button"></button>
+            <button class="arrow next-btn" type="button"></button>
+        `
     }
 }
 
@@ -44,9 +64,7 @@ const images = [
     "./img/4.jpg"
 ];
 
-const images2 = images.slice(1);
-
 const slider = new Slider(images, ".slider-1");
 slider.init();
 
-new Slider(images2, '.slider-2').init();
+new Slider(images, ".slider-2").init();
