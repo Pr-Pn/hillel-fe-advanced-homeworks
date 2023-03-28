@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body>
+<ul class="gallery">
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/1.jpg"></li>
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/2.jpg"></li>
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/3.jpeg"></li>
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/4.jpg"></li>
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/5.jpeg"></li>
+    <li class="gallery__item js--gal_item"><img alt="" src="./img/6.jpg"></li>
+</ul>
+<div class="modal js--modal">
+    <button class="modal__close js--modal__close">Close</button>
+    <button class="modal__prev js--modal__prev">Prev</button>
+    <div class="modal__content js--modal__content"><img alt="" src="./img/1.jpg"></div>
+    <button class="modal__next js--modal__next">Next</button>
+</div>
+<script src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(() => {
+        const modal = $(".js--modal");
+        const modalImg = $(".js--modal__content > img");
+        const modalCloseBtn = $(".js--modal__close");
+        const modalNextBtn = $(".js--modal__next");
+        const modalPrevBtn = $(".js--modal__prev");
+        const galleryItems = $('.js--gal_item');
+        let currentGalleryItem;
+
+        galleryItems.click((event) => {
+            const targetImg = $(event.target);
+            currentGalleryItem = targetImg.parents("li.js--gal_item");
+            modalImg.attr('src', targetImg.attr('src'));
+            modal.addClass("active");
+        });
+
+        modalCloseBtn.click(() => {
+            modal.removeClass("active");
+        });
+
+        modalNextBtn.click(() => {
+            let nextGalleryItem = currentGalleryItem.next();
+            if (nextGalleryItem.length === 0) {
+                nextGalleryItem = galleryItems.first();
+            }
+            modalImg.attr('src', nextGalleryItem.children('img').attr('src'));
+            currentGalleryItem = nextGalleryItem;
+        });
+
+        modalPrevBtn.click(() => {
+            let prevGalleryItem = currentGalleryItem.prev();
+            if (prevGalleryItem.length === 0) {
+                prevGalleryItem = galleryItems.last();
+            }
+            modalImg.attr('src', prevGalleryItem.children('img').attr('src'));
+            currentGalleryItem = prevGalleryItem;
+        });
+    });
+</script>
+
+</body>
+</html>
