@@ -1,0 +1,52 @@
+body {
+    margin: 0 auto;
+    padding: 100px 30px 0;
+    background-color: #ee6868;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.enter-message-input {
+    text-align: center;
+}
+
+.info-body {
+    background-color: #ebc2c2;
+    border-radius: 20px;
+}
+
+.info__title {
+    padding: 30px 150px;
+}
+
+.info__post {
+    padding: 30px 50px;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    height: 35px;
+    width: 170px;
+    border-radius: 10px;
+    background-color: #8bdbdb;
+}
+
+button:hover {
+    background-color: #04adad;
+}
+
+h3 {
+    padding: 0 30px;
+    margin: 20px 0 5px;
+}
+
+h5 {
+    margin: 0;
+    padding: 0 30px 15px;
+}
