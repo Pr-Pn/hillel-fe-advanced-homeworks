@@ -1,0 +1,28 @@
+$background-color: #d9e3e9;
+$valid-color: #d63731;
+
+body {
+  background-color:$background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .form {
+    margin: 300px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .form__password {
+      margin-bottom: 10px;
+    }
+  }
+  .validation {
+    color:$valid-color;
+  }
+  .hidden {
+    display: none;
+  }
+  .done {
+    color: darkcyan;
+    list-style: "\1F44D";
+  }
+}

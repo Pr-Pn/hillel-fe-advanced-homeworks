@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+<form class="form" action="https://fom.in.ua/echo" method="POST">
+  <label class="form__password">
+    Пароль:
+    <input type="password" name="password">
+  </label>
+
+  <button class="form__btn__submit" type="submit" name="email">Відправити</button>
+</form>
+<ul class="validation">
+  <li class="hidden validation_message__capital-letter">Одна велика буква</li>
+  <li class="hidden validation_message__one-number">Одна цифра</li>
+  <li class="hidden validation_message__punctuation-mark">Один знак пунктації</li>
+  <li class="hidden validation_message__min-length">Мінімум 8 символів</li>
+</ul>
+</body>
+</html>
