@@ -1,0 +1,24 @@
+body {
+    margin: 0 auto;
+    background-color: #e39073;
+}
+
+a {
+    color: antiquewhite;
+    text-decoration: none;
+    margin: 0 10px 0 0;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+}
+
+#root {
+    margin: 0 15px;
+    box-sizing: border-box;
+}
