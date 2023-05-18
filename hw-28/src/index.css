@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #66c6c6;
+}
+
+.container {
+    padding: 50px 15px;
+}
+
+button {
+    padding: 20px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: antiquewhite;
+    margin: 60px;
+    width: 300px;
+}
+
+.smile {
+    width: 100px;
+}
+
+.smile_res {
+    width: 200px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

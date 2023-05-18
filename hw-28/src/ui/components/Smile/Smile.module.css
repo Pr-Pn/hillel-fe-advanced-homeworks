@@ -1,0 +1,10 @@
+span {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    align-items: center;
+    padding: 10px;
+    color: #e1c3c3;
+    font-size: 45px;
+    font-weight: bold;
+}
