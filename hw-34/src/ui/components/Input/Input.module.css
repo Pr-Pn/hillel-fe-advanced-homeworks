@@ -1,0 +1,12 @@
+.input {
+    min-height: 25px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid;
+}
+
+.error_massage {
+    margin-top: 10px;
+    color: red;
+    grid-row-start: 2;
+}

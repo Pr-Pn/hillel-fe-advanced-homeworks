@@ -1,0 +1,14 @@
+.button {
+    background: #0be69d;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+.isDelete {
+    background: #0be69d;
+    border: none;
+    cursor: pointer;
+    width: 95px;
+    padding: 10px;
+}

@@ -1,0 +1,15 @@
+.add_btn {
+    background: #bac;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+.isDelete {
+    background: #bac;
+    border: none;
+    cursor: pointer;
+    width: 95px;
+    padding: 10px;
+}
