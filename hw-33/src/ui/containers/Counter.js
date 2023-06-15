@@ -1,16 +1,23 @@
-import { store } from "../engine/init/store";
+import {useDispatch} from "react-redux";
+import Button from "../components/Button";
+import ValueContainer from "../components/ValueContainer";
+import {decrement, increment} from "../../engine/core/counter/counterSlice";
 
-function Counters() {
-
+function Counter() {
+    const dispatch = useDispatch();
+    const onIncrement = () => {
+        dispatch(increment());
+    }
+    const onDecrement = () => {
+        dispatch(decrement());
+    }
     return (
-        <Provider store={store}>
-            <div>
-                <ValueContainer value={value}/>
-                <Button onClick={onIncrement} text="Increment" />
-                <Button onClick={onDecrement} text="Decrement" />
-            </div>
-        </Provider>
+        <div>
+            <ValueContainer/>
+            <Button onClick={onIncrement} text="Increment"/>
+            <Button onClick={onDecrement} text="Decrement"/>
+        </div>
     );
 }
 
-export default Counters;
+export default Counter;
